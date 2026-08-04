@@ -1,16 +1,18 @@
-# mcp-ror
+# @pipeworx/ror
 
-ROR MCP — Research Organization Registry.
+[Research Organization Registry (ROR)](https://ror.org) MCP — canonical identifiers for research organizations. Keyless.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search` | Search organizations. |
-| `get` | Full ROR record. Accepts the trailing identifier (e.g. "03vek6s52") or the full URL. |
-| `affiliation` | Fuzzy affiliation-string match. Returns candidates with confidence scores. |
+- `search(query, type?, country?, page?)` — search organizations
+- `get(ror_id)` — full org record by ROR id (e.g. `https://ror.org/03vek6s52`)
+- `affiliation(text)` — fuzzy affiliation-string match (returns candidates with scores)
+
+## Data source
+
+`https://api.ror.org/v2/organizations`
 
 ## Quick Start
 
@@ -26,7 +28,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -50,7 +52,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
