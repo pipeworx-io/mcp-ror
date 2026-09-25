@@ -1,20 +1,32 @@
 {
   "name": "@pipeworx/mcp-ror",
-  "version": "0.1.0",
-  "description": "Research Organization Registry (ROR) — canonical org IDs",
+  "version": "0.1.1",
+  "description": "ROR MCP — Research Organization Registry.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "bin": {
+    "mcp-ror": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ror"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-ror"
+    "url": "git+https://github.com/pipeworx-io/mcp-ror.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-ab85260875e23099ddbffe1152a75f0350c68ea1827593ec49bd49c247506d69",
+    "sourceCommit": "00c836ddeaecbdd581dcfb0fb1842efea104006e"
   }
 }
