@@ -1,0 +1,60 @@
+[
+  {
+    "name": "search",
+    "description": "Search the Research Organization Registry (ROR) for universities, research institutes, hospitals, companies, and funders by name or acronym, with optional filters for organization type (education, healthcare, company, government, nonprofit, facility, archive, other) and ISO-3166 alpha-2 country code. Returns each organization ROR id, official and alternate names, country and location, types, and external identifiers. Answers which ROR id belongs to a named research institution.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "e.g. \"harvard university\""
+        },
+        "type": {
+          "type": "string",
+          "description": "education | healthcare | company | archive | nonprofit | government | facility | other"
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO-3166 alpha-2 country code, e.g. \"US\""
+        },
+        "page": {
+          "type": "number",
+          "description": "1-based page (default 1)"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "get",
+    "description": "Full ROR record. Accepts the trailing identifier (e.g. \"03vek6s52\") or the full URL.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "ror_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ror_id"
+      ]
+    }
+  },
+  {
+    "name": "affiliation",
+    "description": "Fuzzy affiliation-string match. Returns candidates with confidence scores.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ]
+    }
+  }
+]
